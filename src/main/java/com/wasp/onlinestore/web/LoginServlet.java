@@ -3,6 +3,7 @@ package com.wasp.onlinestore.web;
 import com.wasp.onlinestore.exception.DataAccessException;
 import com.wasp.onlinestore.exception.PasswordMismatchException;
 import com.wasp.onlinestore.exception.UserNotFoundException;
+import com.wasp.onlinestore.main.ServiceLocator;
 import com.wasp.onlinestore.service.security.SecurityService;
 import com.wasp.onlinestore.web.util.PageGenerator;
 import jakarta.servlet.http.Cookie;
@@ -12,13 +13,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
-    private final SecurityService securityService;
-    private final PageGenerator pageGenerator;
 
-    public LoginServlet(SecurityService securityService) {
-        this.securityService = securityService;
-        this.pageGenerator = new PageGenerator();
-    }
+    private final SecurityService securityService = ServiceLocator.get(SecurityService.class);
+    private final PageGenerator pageGenerator = ServiceLocator.get(PageGenerator.class);
+
+//    private final SecurityService securityService;
+//    private final PageGenerator pageGenerator;
+//
+//    public LoginServlet(SecurityService securityService) {
+//        this.securityService = securityService;
+//        this.pageGenerator = new PageGenerator();
+//    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

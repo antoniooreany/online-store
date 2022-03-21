@@ -1,5 +1,6 @@
 package com.wasp.onlinestore.web;
 
+import com.wasp.onlinestore.main.ServiceLocator;
 import com.wasp.onlinestore.service.CartService;
 import com.wasp.onlinestore.service.security.entity.Session;
 import com.wasp.onlinestore.web.util.SessionFetcher;
@@ -9,13 +10,17 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.invoke.SerializedLambda;
 
 public class CartDeleteServlet extends HttpServlet {
-    private final CartService cartService;
 
-    public CartDeleteServlet(CartService cartService) {
-        this.cartService = cartService;
-    }
+    private final CartService cartService = ServiceLocator.get(CartService.class);
+
+//    private final CartService cartService;
+//
+//    public CartDeleteServlet(CartService cartService) {
+//        this.cartService = cartService;
+//    }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +30,7 @@ public class CartDeleteServlet extends HttpServlet {
 
         resp.setStatus(HttpServletResponse.SC_OK);
         RequestDispatcher dispatcher = getServletContext()
-            .getRequestDispatcher("/cart");
+                .getRequestDispatcher("/cart");
         dispatcher.forward(req, resp);
     }
 }
