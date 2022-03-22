@@ -17,8 +17,6 @@ public class CartServlet extends HttpServlet {
 
     private static final PageGenerator PAGE_GENERATOR = ServiceLocator.get(PageGenerator.class);
 
-//    private static final PageGenerator PAGE_GENERATOR = new PageGenerator();
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try {

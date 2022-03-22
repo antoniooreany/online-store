@@ -18,6 +18,7 @@ import static com.wasp.onlinestore.web.util.ProductMapper.getProductFromRequestB
 public class ProductUpdateServlet extends HttpServlet {
 
     private final ProductService productService = ServiceLocator.get(ProductService.class);
+
     private final PageGenerator pageGenerator = ServiceLocator.get(PageGenerator.class);
 
     @Override

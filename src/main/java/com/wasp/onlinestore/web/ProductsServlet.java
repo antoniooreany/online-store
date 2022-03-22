@@ -17,6 +17,7 @@ import java.util.Map;
 public class ProductsServlet extends HttpServlet {
 
     private final ProductService productService = ServiceLocator.get(ProductService.class);
+
     private final PageGenerator pageGenerator = ServiceLocator.get(PageGenerator.class);
 
     @Override

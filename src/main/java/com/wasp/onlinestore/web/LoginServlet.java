@@ -17,14 +17,6 @@ public class LoginServlet extends HttpServlet {
     private final SecurityService securityService = ServiceLocator.get(SecurityService.class);
     private final PageGenerator pageGenerator = ServiceLocator.get(PageGenerator.class);
 
-//    private final SecurityService securityService;
-//    private final PageGenerator pageGenerator;
-//
-//    public LoginServlet(SecurityService securityService) {
-//        this.securityService = securityService;
-//        this.pageGenerator = new PageGenerator();
-//    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         pageGenerator.writePage("login.html", resp.getWriter());

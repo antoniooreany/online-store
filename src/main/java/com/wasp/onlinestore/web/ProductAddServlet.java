@@ -14,6 +14,7 @@ import java.io.IOException;
 public class ProductAddServlet extends HttpServlet {
 
     private final ProductService productService = ServiceLocator.get(ProductService.class);
+
     private final PageGenerator pageGenerator = ServiceLocator.get(PageGenerator.class);
 
     @Override

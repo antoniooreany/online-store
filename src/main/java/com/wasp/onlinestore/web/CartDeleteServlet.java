@@ -16,12 +16,6 @@ public class CartDeleteServlet extends HttpServlet {
 
     private final CartService cartService = ServiceLocator.get(CartService.class);
 
-//    private final CartService cartService;
-//
-//    public CartDeleteServlet(CartService cartService) {
-//        this.cartService = cartService;
-//    }
-
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));

@@ -11,12 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CartAddServlet extends HttpServlet {
     private final CartService cartService = ServiceLocator.get(CartService.class);
 
-//    private final CartService cartService;
-//
-//    public CartAddServlet(CartService cartService) {
-//        this.cartService = cartService;
-//    }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         int id = Integer.parseInt(req.getParameter("id"));

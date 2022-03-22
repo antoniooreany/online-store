@@ -11,16 +11,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class RegisterServlet extends HttpServlet {
-    private final SecurityService securityService = ServiceLocator.get(SecurityService.class);
-    private final PageGenerator pageGenerator= ServiceLocator.get(PageGenerator.class);
 
-//    private final SecurityService securityService;
-//    private final PageGenerator pageGenerator;
-//
-//    public RegisterServlet(SecurityService securityService) {
-//        this.securityService = securityService;
-//        this.pageGenerator = new PageGenerator();
-//    }
+    private final SecurityService securityService = ServiceLocator.get(SecurityService.class);
+
+    private final PageGenerator pageGenerator= ServiceLocator.get(PageGenerator.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
